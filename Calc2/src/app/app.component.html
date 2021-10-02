@@ -1,0 +1,27 @@
+<div id='container'>
+<h1  >  SIMPLE CALCULATOR</h1>
+<label for="firstNumber">1ST Number:</label>
+<input (input)="getfirstNumber(firstNumber.value)"
+type="text" id="firstNumber" #firstNumber><br>
+
+<label for="secondNumber">2ND Number:</label>
+<input (input)="getsecondNumber(secondNumber.value)"
+type="text" id="secondNumber" name="secondNumber" #secondNumber><br>
+
+<button  [disabled]="!(firstNumber.value && secondNumber.value)"
+(click)="onAdd()" id = "add" class = "buttons"> + </button>
+
+<button  [disabled]="!(firstNumber.value && secondNumber.value)"
+(click)="onSub()" id = "sub" class = "buttons"> - </button>
+
+<button  [disabled]="!(firstNumber.value && secondNumber.value)"
+(click)="onMulti()" id = "multi" class = "buttons"> * </button>
+
+<button  [disabled]="!(firstNumber.value && secondNumber.value)"
+(click)="onDiv()" id = "multi" class = "buttons"> / </button>
+
+<div *ngIf = "answer">
+<p id = "answer"> {{getAnswer()}}</p>
+</div>
+
+</div>
